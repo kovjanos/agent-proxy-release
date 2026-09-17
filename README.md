@@ -6,9 +6,11 @@ tokens, the URLs a container may reach — out of the hands of the coding
 agents, containers and scripts that use them. There is no source here; the
 source repository is private.
 
-Each release holds two assets:
+Each release holds three assets:
 
-- `agent-proxy-<version>.zip` — the notarized, stapled app, alone.
+- `agent-proxy-<version>.dmg` — the installer, for installing by hand.
+- `agent-proxy-<version>.zip` — the notarized, stapled app alone, which
+  the in-app updater downloads.
 - `appcast.xml` — the feed an installed app reads.
 
 ## How an installed app uses it
@@ -22,9 +24,10 @@ running one.
 
 ## Installing by hand
 
-Unzip the newest `agent-proxy-<version>.zip` and move `agent-proxy.app`
-to Applications. The app is notarized and stapled, so Gatekeeper opens it.
-Requirements: macOS 13 or later on Apple silicon.
+Open the newest `agent-proxy-<version>.dmg` and drag agent-proxy to
+Applications; the release notes carry the DMG's SHA-256. The app is
+notarized and stapled, so Gatekeeper opens it. Requirements: macOS 13 or
+later on Apple silicon. From then on the app updates itself.
 
 ## License
 
